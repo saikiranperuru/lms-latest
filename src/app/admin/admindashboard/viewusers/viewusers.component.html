@@ -1,0 +1,46 @@
+            <div class="card rounded shadow border-0 bg-light">
+              <div class="card-body p-5 rounded  bg-white">
+                <div class="text-center"><label style="font-size: 8mm;font-weight: 100;font-family:Roboto;color:#6d7fcc;">User Details</label></div>
+                <div class="table-responsive">
+                  <table id="userexample" style="width:100%" class="table table-striped table-bordered" *ngIf="this.temp">
+                    <thead>
+                      <tr>
+                        <th>User Id</th>
+                        <th>User Name</th>
+                        <th>Email Id</th>
+                        <th>Contact No</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let obj of this.userObj">
+                        <td>{{obj.userid}}</td>
+                        <td>{{obj.username}}</td>
+                        <td>{{obj.email}}</td>
+                        <td>{{obj.contactno}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
+              <div class="jumbotron jumbotron-fluid shadow rounded-sm bg-white mt-3" style="width: 100%;">
+                <div>
+                  <div>
+                    <p id="headinglabel">Export Data!</p> 
+                  </div>
+                  <div >
+                    <button id="buttonsubmit1" type="submit" (click)="exportAsXLSX1()">Export Data</button>
+                  </div>
+                  <hr/>
+                  <div>
+                    <p id="headinglabel">Import Data!</p> 
+                  </div>
+                  <div >
+                  <label for="file-upload" class="custom-file-upload">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload File
+                  </label>
+                  <input id="file-upload" type="file" (change)="onFileChange($event)" style="display:none;" />
+                  <div><span class="label1 my-3">{{filename}}</span></div>
+                  <button id="buttonsubmit2" type="submit" (click)="uploaduserdetails()">Import Data</button></div>
+                </div>
+              </div>
